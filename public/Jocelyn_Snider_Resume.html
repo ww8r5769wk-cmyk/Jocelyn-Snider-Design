@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jocelyn Snider — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: letter;
+      margin: 0.5in;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.5;
+      background-color: #FAF6F0;
+      color: #7A2D3C;
+      padding: 2.5rem;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .resume-container {
+      width: 100%;
+      max-width: 8.5in;
+      background: #FAF6F0;
+      margin: 0 auto;
+    }
+
+    /* Resume Header and Contact Information Layout */
+    .header-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid rgba(122, 45, 60, 0.15);
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .header-left h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 0.25rem;
+    }
+
+    .header-left h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      opacity: 0.9;
+    }
+
+    .header-right {
+      text-align: right;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      font-weight: 500;
+    }
+
+    .header-right a {
+      color: #7A2D3C;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    
+    .header-right a:hover {
+      text-decoration: underline;
+    }
+
+    .summary-text {
+      font-size: 0.98rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      font-weight: 400;
+      max-width: 95%;
+    }
+
+    /* Two Column Layout */
+    .columns-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 0.9fr;
+      gap: 2.5rem;
+    }
+
+    .column-left {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    .column-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    /* Sections Shared Styles */
+    .section-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      border-bottom: 1px solid rgba(122, 45, 60, 0.1);
+      padding-bottom: 0.4rem;
+      margin-bottom: 0.8rem;
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* Experience Card spacing */
+    .exp-item {
+      margin-bottom: 1.4rem;
+    }
+
+    .exp-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.35rem;
+    }
+
+    .exp-company-role {
+      font-weight: 700;
+      font-size: 0.98rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .exp-date {
+      font-size: 0.85rem;
+      font-weight: 500;
+      opacity: 0.8;
+      white-space: nowrap;
+    }
+
+    .exp-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .exp-list li {
+      position: relative;
+      padding-left: 1rem;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      margin-bottom: 0.5rem;
+      opacity: 0.95;
+    }
+
+    .exp-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #7A2D3C;
+      font-weight: bold;
+    }
+
+    /* Education Item */
+    .edu-item {
+      margin-bottom: 0.5rem;
+    }
+
+    .edu-degree {
+      font-weight: 700;
+      font-size: 0.98rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .edu-school {
+      font-size: 0.9rem;
+      font-weight: 500;
+      opacity: 0.9;
+    }
+
+    .edu-date {
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+
+    /* Sidebar Lists (Skills, Tools, Process) */
+    .sidebar-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .sidebar-item {
+      font-size: 0.88rem;
+      line-height: 1.4;
+      opacity: 0.95;
+    }
+
+    /* Print-Only Back to Portfolio Button button */
+    .back-btn {
+      position: fixed;
+      top: 1.5rem;
+      left: 1.5rem;
+      background-color: #7A2D3C;
+      color: #FAF6F0;
+      padding: 0.6rem 1.2rem;
+      border-radius: 9999px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(122, 45, 60, 0.15);
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      z-index: 100;
+    }
+
+    .back-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(122, 45, 60, 0.25);
+    }
+
+    .back-btn svg {
+      width: 14px;
+      height: 14px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Print styling rules */
+    @media print {
+      body {
+        background-color: #FFF !important;
+        color: #7A2D3C !important;
+        padding: 0 !important;
+      }
+
+      .resume-container {
+        background-color: #FFF !important;
+        max-width: 100% !important;
+      }
+
+      .back-btn {
+        display: none !important;
+      }
+    }
+
+    /* Responsive design for screens */
+    @media (max-width: 768px) {
+      body {
+        padding: 1.5rem;
+      }
+      
+      .header-section {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .header-right {
+        text-align: left;
+      }
+
+      .columns-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .back-btn {
+        position: static;
+        margin-bottom: 1.5rem;
+        display: inline-flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Print-Only Back to Portfolio Button -->
+  <a href="/" class="back-btn">
+    <svg viewBox="0 0 24 24">
+      <line x1="19" y1="12" x2="5" y2="12"></line>
+      <polyline points="12 19 5 12 12 5"></polyline>
+    </svg>
+    Portfolio
+  </a>
+
+  <div class="resume-container">
+    <!-- Header Section -->
+    <header class="header-section">
+      <div class="header-left">
+        <h1>Jocelyn Snider</h1>
+        <h2>Designer & Visual Strategist</h2>
+      </div>
+      <div class="header-right">
+        <div><a href="https://linkedin.com/in/jocelynsnider" target="_blank" rel="noopener noreferrer">LinkedIn/jocelynsnider</a></div>
+        <div><a href="mailto:jocelyn_snider@live.ca">jocelyn_snider@live.ca</a></div>
+        <div>519 722 4908</div>
+      </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <p class="summary-text">
+      Versatile Graphic Designer with a passion for branding and storytelling through digital and print design. Creates impactful visuals that connect with audiences and elevate brands.
+    </p>
+
+    <!-- Content Columns -->
+    <div class="columns-grid">
+      <!-- Left Column - Experience & Education -->
+      <main class="column-left">
+        
+        <!-- EXPERIENCE SECTION -->
+        <section>
+          <h2 class="section-title">Experience</h2>
+          
+          <!-- Stance Healthcare -->
+          <article class="exp-item">
+            <div class="exp-item-header">
+              <h3 class="exp-company-role">Designer - Stance Healthcare</h3>
+              <span class="exp-date">Oct. 2025 - present</span>
+            </div>
+            <ul class="exp-list">
+              <li>Optimized and automated a 20-year legacy Price Book process, cutting production time from 104 to 6 hours (94%) and significantly improving team efficiency.</li>
+              <li>Partner with the marketing team to develop fresh, modern creative that elevates the architectural and aesthetic standard of healthcare furniture.</li>
+              <li>Drove a consistent 75% increase in engagement by balancing core brand identity with contemporary design trends.</li>
+              <li>Manage the end-to-end creative lifecycle for 15+ concurrent projects with a 100% on-time delivery rate, from concept through technical execution.</li>
+            </ul>
+          </article>
+
+          <!-- Freelance -->
+          <article class="exp-item">
+            <div class="exp-item-header">
+              <h3 class="exp-company-role">Graphic Designer - Freelance</h3>
+              <span class="exp-date">Jan. 2017 - present</span>
+            </div>
+            <ul class="exp-list">
+              <li>Led 10+ rebrands across Canada, , using UX-informed design to drive measurable growth (up to 2200% increase in web traffic)</li>
+              <li>Provided end-to-end creative direction from concept to launch, translating brand strategy into cohesive, high-performing visual identities</li>
+            </ul>
+          </article>
+
+          <!-- Constellation1 -->
+          <article class="exp-item">
+            <div class="exp-item-header">
+              <h3 class="exp-company-role">Graphic Designer - Constellation1</h3>
+              <span class="exp-date">Apr. 2022 - Feb. 2025</span>
+            </div>
+            <ul class="exp-list">
+              <li>Led design for a new sub brand launch, creating a full visual identity and scalable asset system</li>
+              <li>Delivered high volume, multi channel content (social, email, SEO), contributing to a 40% increase in organic traffic</li>
+              <li>Implemented AI workflows to increase production speed by 30% while maintaining creative quality</li>
+              <li>Developed brand merch and campaigns that drove engagement and modernized brand perception, Led a diversity initiative increasing representation in marketing visuals by 75%</li>
+            </ul>
+          </article>
+
+          <!-- Shoppers Drug Mart -->
+          <article class="exp-item">
+            <div class="exp-item-header">
+              <h3 class="exp-company-role">Social Media Manager - Shoppers Drug Mart</h3>
+              <span class="exp-date">Sep. 2021 - June. 2022</span>
+            </div>
+            <ul class="exp-list">
+              <li>Revamped Instagram strategy, driving 300% growth in followers and engagement, while creating, trend led and educational content that increased in-store product inquiries by 25% and maintaining consistent, on-brand execution</li>
+            </ul>
+          </article>
+
+        </section>
+
+        <!-- EDUCATION SECTION -->
+        <section>
+          <h2 class="section-title">Education</h2>
+          <div class="edu-item">
+            <div class="edu-degree">Bachelor’s of Design</div>
+            <div class="edu-school">Conestoga College</div>
+            <div class="edu-date">2015 -2019</div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- Right Column - Skills, Tools, Process -->
+      <aside class="column-right">
+        
+        <!-- SKILLS -->
+        <section>
+          <h2 class="section-title">Skills</h2>
+          <div class="sidebar-list">
+            <div class="sidebar-item">Visual storytelling</div>
+            <div class="sidebar-item">Branding, Cohesive identity design</div>
+            <div class="sidebar-item">Packaging</div>
+            <div class="sidebar-item">Marketing collateral</div>
+            <div class="sidebar-item">Social media content</div>
+            <div class="sidebar-item">UX/UI design</div>
+            <div class="sidebar-item">Typography</div>
+            <div class="sidebar-item">Composition</div>
+            <div class="sidebar-item">Colour theory</div>
+            <div class="sidebar-item">Motion graphics</div>
+            <div class="sidebar-item">Video/photo editing</div>
+            <div class="sidebar-item">Illustration</div>
+            <div class="sidebar-item">Creative problem-solving and critical thinking</div>
+          </div>
+        </section>
+
+        <!-- TOOLS -->
+        <section>
+          <h2 class="section-title">Tools</h2>
+          <div class="sidebar-list">
+            <div class="sidebar-item">Adobe CC</div>
+            <div class="sidebar-item">Microsoft Suit</div>
+            <div class="sidebar-item">Figma</div>
+            <div class="sidebar-item">Canva</div>
+            <div class="sidebar-item">ChatGPT</div>
+            <div class="sidebar-item">Hubspot</div>
+            <div class="sidebar-item">ClickUp</div>
+            <div class="sidebar-item">Notion</div>
+            <div class="sidebar-item">Procreate</div>
+          </div>
+        </section>
+
+        <!-- PROCESS -->
+        <section>
+          <h2 class="section-title">Process</h2>
+          <div class="sidebar-list">
+            <div class="sidebar-item">Team collaboration</div>
+            <div class="sidebar-item">Ideation</div>
+            <div class="sidebar-item">Research</div>
+            <div class="sidebar-item">Strategy</div>
+            <div class="sidebar-item">Design thinking</div>
+            <div class="sidebar-item">Concept development</div>
+            <div class="sidebar-item">Art direction</div>
+            <div class="sidebar-item">Iteration</div>
+            <div class="sidebar-item">Final design hand off</div>
+            <div class="sidebar-item">Post launch evaluation</div>
+          </div>
+        </section>
+
+      </aside>
+    </div>
+  </div>
+</body>
+</html>
