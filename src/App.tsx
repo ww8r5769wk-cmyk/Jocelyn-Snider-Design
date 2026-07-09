@@ -1057,7 +1057,7 @@ const Testimonies = () => {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <h2 className="text-4xl md:text-5xl text-center mb-16 font-bold">{preventOrphansInNode("Testimony's")}</h2>
+        <h2 className="text-4xl md:text-5xl text-center mb-16 font-bold">{preventOrphansInNode("Testimonies")}</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
           {quotes.map((quote, i) => (
