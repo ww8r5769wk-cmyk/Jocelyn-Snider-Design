@@ -1138,7 +1138,7 @@ const About = () => {
     <section 
       id="about" 
       ref={sectionRef}
-      className="max-w-7xl mx-auto px-6 py-24 cursor-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTIgMkwyIDIyTDEyIDE4TDIyIDIyTDEyIDJaIiBmaWxsPSJibGFjayIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9zdmc+'),_auto] overflow-hidden"
+      className="max-w-7xl mx-auto px-6 py-24 cursor-tilted-arrow overflow-hidden"
       onMouseMove={handleMouseMove}
     >
       <div className="flex flex-col lg:flex-row gap-16 items-start">
