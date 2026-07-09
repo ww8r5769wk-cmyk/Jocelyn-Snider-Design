@@ -964,7 +964,7 @@ const CaseStudy = () => {
   );
 };
 
-const Testimonies = () => {
+const Testimonials = () => {
   const quotes = [
     { 
       text: (
