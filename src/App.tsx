@@ -26,7 +26,7 @@ import {
   useMotionValue,
   animate
 } from 'motion/react';
-import { BrowserRouter, Routes, Route, Link, useParams, useNavigate, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, Link, useParams, useNavigate, useLocation } from 'react-router-dom';
 
 // --- Page & Data Imports ---
 import { PROJECTS_METADATA as PROJECTS } from './data/projectsData';
@@ -1332,8 +1332,8 @@ const AppContent = () => {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <AppContent />
-    </BrowserRouter>
+    </HashRouter>
   );
 }
