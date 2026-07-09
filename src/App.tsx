@@ -712,7 +712,7 @@ const Marquee = () => {
             <img 
               src={logo.url} 
               alt={logo.alt} 
-              className={`h-10 w-auto object-contain transition-all duration-500 dark:invert ${logo.name === 'Microsoft 365' ? 'brightness-0 invert' : ''}`}
+              className={`h-10 w-auto object-contain transition-all duration-500 dark:invert ${logo.name === 'Microsoft 365' ? 'brightness-0' : ''}`}
               referrerPolicy="no-referrer" 
             />
           </a>
@@ -969,7 +969,7 @@ const Testimonials = () => {
     { 
       text: (
         <>
-          Jocelyn transformed our social reach to   <Counter value={75} />% engagement increase. She doesn't just design; she delivers&nbsp;results.
+          Jocelyn transformed our social reach to {" "} <Counter value={75} />% engagement increase. She doesn't just design; she delivers&nbsp;results.
         </>
       ), 
       author: "Design Client", 
@@ -1181,7 +1181,7 @@ const About = () => {
             </motion.p>
             <motion.p variants={bioItemVariants}>
               I focus on streamlining design processes by introducing AI, removing operational hurdles so design can take center stage. 
-              I take pride in leading design from conception to final delivery, having successfully increased social engagement metrics by up to <span className="inline-block ml-1">75%</span>.
+              I take pride in leading design from conception to final delivery, having successfully increased social engagement metrics by up to 75%.
             </motion.p>
             <motion.p variants={bioItemVariants}>
               Outside of design, I explore my tactile creativity through gardening, baking, skincare, and sewing.
@@ -1237,7 +1237,7 @@ const Footer = () => {
                 aria-label="Send an email to Jocelyn Snider"
                 id="footer-link-email"
               >
-                <Mail className="w-5 h-5 stroke-[2] transition-transform duration-200 group-hover:scale-110 text-punchy" aria-hidden="true" />
+                <Mail className="w-5 h-5 stroke-[2] transition-transform duration-200 group-hover:scale-110 text-primary" aria-hidden="true" />
                 <span>jocelyn_snider@live.ca</span>
               </a>
             </li>
